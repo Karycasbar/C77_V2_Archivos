@@ -1,0 +1,96 @@
+const styles=StyleSheet.create({
+  container:{
+    flex:1
+  }
+});
+
+--------------------------------------------
+droidSafeArea:{
+    marginTop: Platform.OS === "android"? StatusBar.currentHeight:0
+  }
+
+--------------------------------------------------------------------
+  titleBar:{
+    flex:0.15,
+    justifyContent:"center",
+    alignItems:"center",
+  }
+
+---------------------------------------
+<TouchableOpacity>
+  <Text> Ubicación de EEI</Text>
+    </TouchableOpacity>  
+<TouchableOpacity>
+  <Text> Meteoros</Text>
+    </TouchableOpacity>
+
+-------------------------------------
+routeCard: {
+    flex: 0.25,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 50,
+    borderRadius: 30,
+    backgroundColor: "white",  
+    borderWidth:2,   //solo mostrarlo pero lo tenemos que quitar es para ver el boton
+  }
+--------------------------------------
+
+  titleText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white"
+  },
+  routeText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "black",
+    marginTop: 75,
+    paddingLeft: 30
+  }
+---------------------------------------------------------------------
+
+    backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  }
+-------------------------------------------------
+<Text style={styles.knowMore}>{"Conoce más --->"}</Text>
+                      <Text style={styles.bgDigit}>1</Text>
+                      <Image source={require("../assets/iss_icon.png")} style={styles.iconImage}></Image>
+
+-------------------------------------------------------
+knowMore: {
+    paddingLeft: 30,
+    color: "red",
+    fontSize: 15
+  },
+  bgDigit: {
+    position: "absolute",
+    color: "rgba(183, 183, 183, 0.5)",
+    fontSize: 140,
+    right: 20,
+    bottom: -15,
+    zIndex: -1
+  },
+  iconImage: {
+    position: "absolute",
+    height: 200,
+    width: 200,
+    resizeMode: "contain",
+    right: 20,
+    top: -80
+  }
+--------------------------------------------------------------
+<TouchableOpacity style={styles.routeCard} onPress={() =>
+                        this.props.navigation.navigate("Updates")
+                    }>
+
+                      <Text style={styles.routeText}>Actualizaciones</Text>
+                      <Text style={styles.knowMore}>{"Conoce más --->"}</Text>
+                      <Text style={styles.bgDigit}>3</Text>
+                      <Image source={require("../assets/rocket_icon.png")} style={styles.iconImage}></Image>                      
+                  </TouchableOpacity>
+
+
+
